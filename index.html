@@ -4,59 +4,391 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mandela Digital</title>
+  <meta name="description" content="VENTRA√10, votre marketplace internationale de produits numériques.">
+  <title>VENTRA√10 — Digital Marketplace</title>
+
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #080d25;
-      color: white;
-      text-align: center;
+      background: #080d20;
+      color: #ffffff;
     }
 
     header {
-      padding: 25px;
-      color: #d4af37;
-      font-size: 25px;
-      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 7%;
+      border-bottom: 1px solid #202943;
     }
 
-    main {
-      padding: 90px 20px;
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      color: #d4af37;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #d8dbea;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 14px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 95px 20px 75px;
+      background: linear-gradient(145deg, #101a38, #080d20);
+    }
+
+    .tag {
+      color: #d4af37;
+      font-size: 12px;
+      letter-spacing: 3px;
+      margin-bottom: 22px;
     }
 
     h1 {
-      font-size: 38px;
+      font-size: clamp(34px, 6vw, 58px);
+      max-width: 850px;
+      margin: auto;
+      line-height: 1.15;
     }
 
-    p {
-      color: #c5c9d8;
+    h1 span {
+      color: #d4af37;
+    }
+
+    .hero p {
+      color: #b7bfd3;
+      max-width: 600px;
+      margin: 22px auto 30px;
       line-height: 1.7;
     }
 
-    button {
+    .search {
+      display: flex;
+      max-width: 570px;
+      margin: auto;
+      background: white;
+      border-radius: 9px;
+      padding: 6px;
+    }
+
+    .search input {
+      flex: 1;
+      min-width: 0;
+      border: none;
+      outline: none;
+      padding: 13px;
+      font-size: 14px;
+    }
+
+    .search button {
       background: #d4af37;
       border: none;
-      padding: 15px 25px;
-      border-radius: 8px;
+      border-radius: 6px;
+      padding: 12px 20px;
       font-weight: bold;
+      cursor: pointer;
+    }
+
+    .section {
+      padding: 55px 7%;
+    }
+
+    .section h2 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #9ba6c0;
+      margin-bottom: 28px;
+      font-size: 14px;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 15px;
+    }
+
+    .category {
+      background: #111a32;
+      border: 1px solid #25314e;
+      padding: 24px 12px;
+      border-radius: 12px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    .category span {
+      display: block;
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: #111a32;
+      border: 1px solid #25314e;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .product-image {
+      height: 145px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1d3159, #18203a);
+      font-size: 45px;
+    }
+
+    .product-info {
+      padding: 18px;
+    }
+
+    .product-info small {
+      color: #d4af37;
+    }
+
+    .product-info h3 {
+      margin: 10px 0;
+      font-size: 17px;
+    }
+
+    .product-info p {
+      color: #aeb8ce;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .price {
+      color: #d4af37;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .empty {
+      display: none;
+      color: #b7bfd3;
+      margin-top: 20px;
+    }
+
+    .banner {
+      margin: 10px 7% 60px;
+      padding: 40px 25px;
+      background: #111a32;
+      border: 1px solid #d4af37;
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    .banner h2 {
+      color: #d4af37;
+      margin-bottom: 12px;
+    }
+
+    .banner p {
+      color: #b7bfd3;
+      line-height: 1.6;
+    }
+
+    footer {
+      border-top: 1px solid #202943;
+      padding: 30px 7%;
+      text-align: center;
+      color: #8d98b1;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 18px 5%;
+      }
+
+      nav a {
+        margin-left: 10px;
+        font-size: 12px;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .hero {
+        padding: 75px 18px 60px;
+      }
+
+      .section {
+        padding: 40px 5%;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header>MANDELA DIGITAL</header>
+
+  <header>
+    <div class="logo">VENTRA√10</div>
+    <nav>
+      <a href="#categories">Explorer</a>
+      <a href="#produits">Produits</a>
+    </nav>
+  </header>
 
   <main>
-    <h1>Bienvenue dans notre univers.</h1>
-    <p>
-      Nous construisons des solutions numériques
-      pour donner vie aux idées.
-    </p>
-    <button>Découvrir nos projets</button>
+    <section class="hero">
+      <div class="tag">THE WORLD DIGITAL MARKETPLACE</div>
+
+      <h1>
+        Le monde numérique<br>
+        <span>à portée de main.</span>
+      </h1>
+
+      <p>
+        Découvrez, achetez et vendez des produits numériques
+        partout dans le monde. Une seule plateforme,
+        des possibilités infinies.
+      </p>
+
+      <div class="search">
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Rechercher un produit..."
+        >
+        <button onclick="searchProducts()">Rechercher</button>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <h2>Explorez nos catégories</h2>
+      <p class="subtitle">
+        Trouvez les ressources numériques qui vous correspondent.
+      </p>
+
+      <div class="categories">
+        <div class="category"><span>📚</span>Ebooks</div>
+        <div class="category"><span>💻</span>Logiciels</div>
+        <div class="category"><span>📱</span>Applications</div>
+        <div class="category"><span>🎓</span>Formations</div>
+        <div class="category"><span>🔑</span>Abonnements</div>
+        <div class="category"><span>🎨</span>Ressources créatives</div>
+      </div>
+    </section>
+
+    <section class="section" id="produits">
+      <h2>À découvrir</h2>
+      <p class="subtitle">
+        Voici un aperçu des produits que vous pourrez retrouver sur VENTRA√10.
+      </p>
+
+      <div class="products" id="productList">
+
+        <article class="product">
+          <div class="product-image">📘</div>
+          <div class="product-info">
+            <small>EBOOK</small>
+            <h3>Guide du succès numérique</h3>
+            <p>Un exemple de guide numérique pour apprendre et progresser.</p>
+            <div class="price">Produit de démonstration</div>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">💻</div>
+          <div class="product-info">
+            <small>LOGICIEL</small>
+            <h3>Outils de productivité</h3>
+            <p>Des solutions numériques pour mieux organiser son travail.</p>
+            <div class="price">Produit de démonstration</div>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">🎓</div>
+          <div class="product-info">
+            <small>FORMATION</small>
+            <h3>Apprendre de nouvelles compétences</h3>
+            <p>Un exemple de formation accessible en ligne.</p>
+            <div class="price">Produit de démonstration</div>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">🎨</div>
+          <div class="product-info">
+            <small>RESSOURCES</small>
+            <h3>Pack créatif numérique</h3>
+            <p>Des ressources pour donner vie à vos idées.</p>
+            <div class="price">Produit de démonstration</div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="empty" id="emptyMessage">
+        Aucun produit trouvé pour cette recherche.
+      </p>
+    </section>
+
+    <section class="banner">
+      <h2>Vous avez quelque chose à vendre ?</h2>
+      <p>
+        Rejoignez VENTRA√10 et préparez votre boutique
+        pour proposer vos produits numériques au monde entier.
+      </p>
+    </section>
   </main>
+
+  <footer>
+    <div class="logo">VENTRA√10</div>
+    Le marché numérique sans frontières.
+    <br>
+    © 2026 VENTRA√10. Tous droits réservés.
+  </footer>
+
+  <script>
+    function searchProducts() {
+      const query = document.getElementById("searchInput")
+        .value.toLowerCase();
+
+      const products = document.querySelectorAll(".product");
+      let visible = 0;
+
+      products.forEach(product => {
+        const match = product.textContent.toLowerCase()
+          .includes(query);
+
+        product.style.display = match ? "block" : "none";
+
+        if (match) visible++;
+      });
+
+      document.getElementById("emptyMessage").style.display =
+        visible === 0 ? "block" : "none";
+    }
+
+    document.getElementById("searchInput")
+      .addEventListener("input", searchProducts);
+  </script>
+
 </body>
 </html>
