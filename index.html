@@ -8,238 +8,253 @@
   <title>VENTRA√10 — Digital Marketplace</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #080d20;
-      color: #ffffff;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 7%;
-      border-bottom: 1px solid #202943;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #171321;
+}
 
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-      color: #d4af37;
-      letter-spacing: 1px;
-    }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 7%;
+  border-bottom: 1px solid #eeeaf7;
+  background: #ffffff;
+}
 
-    nav a {
-      color: #d8dbea;
-      text-decoration: none;
-      margin-left: 22px;
-      font-size: 14px;
-    }
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  color: #21104a;
+  letter-spacing: 1px;
+}
 
-    .hero {
-      text-align: center;
-      padding: 95px 20px 75px;
-      background: linear-gradient(145deg, #101a38, #080d20);
-    }
+nav a {
+  color: #39334b;
+  text-decoration: none;
+  margin-left: 22px;
+  font-size: 14px;
+}
 
-    .tag {
-      color: #d4af37;
-      font-size: 12px;
-      letter-spacing: 3px;
-      margin-bottom: 22px;
-    }
+.hero {
+  text-align: center;
+  padding: 95px 20px 75px;
+  background: linear-gradient(135deg, #21104a, #4930a8, #2864d8);
+  color: #ffffff;
+}
 
-    h1 {
-      font-size: clamp(34px, 6vw, 58px);
-      max-width: 850px;
-      margin: auto;
-      line-height: 1.15;
-    }
+.tag {
+  color: #e2dcff;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
 
-    h1 span {
-      color: #d4af37;
-    }
+h1 {
+  font-size: clamp(34px, 6vw, 58px);
+  max-width: 850px;
+  margin: auto;
+  line-height: 1.15;
+}
 
-    .hero p {
-      color: #b7bfd3;
-      max-width: 600px;
-      margin: 22px auto 30px;
-      line-height: 1.7;
-    }
+h1 span {
+  color: #ffffff;
+}
 
-    .search {
-      display: flex;
-      max-width: 570px;
-      margin: auto;
-      background: white;
-      border-radius: 9px;
-      padding: 6px;
-    }
+.hero p {
+  color: #eeeaff;
+  max-width: 600px;
+  margin: 22px auto 30px;
+  line-height: 1.7;
+}
 
-    .search input {
-      flex: 1;
-      min-width: 0;
-      border: none;
-      outline: none;
-      padding: 13px;
-      font-size: 14px;
-    }
+.search {
+  display: flex;
+  max-width: 570px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 9px;
+  padding: 6px;
+}
 
-    .search button {
-      background: #d4af37;
-      border: none;
-      border-radius: 6px;
-      padding: 12px 20px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  padding: 13px;
+  font-size: 14px;
+  color: #171321;
+}
 
-    .section {
-      padding: 55px 7%;
-    }
+.search button {
+  background: #4930a8;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    .section h2 {
-      font-size: 25px;
-      margin-bottom: 10px;
-    }
+.section {
+  padding: 55px 7%;
+  background: #ffffff;
+}
 
-    .subtitle {
-      color: #9ba6c0;
-      margin-bottom: 28px;
-      font-size: 14px;
-    }
+.section h2 {
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: #21104a;
+}
 
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-      gap: 15px;
-    }
+.subtitle {
+  color: #77718a;
+  margin-bottom: 28px;
+  font-size: 14px;
+}
 
-    .category {
-      background: #111a32;
-      border: 1px solid #25314e;
-      padding: 24px 12px;
-      border-radius: 12px;
-      text-align: center;
-      color: white;
-      font-weight: bold;
-    }
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 15px;
+}
 
-    .category span {
-      display: block;
-      font-size: 27px;
-      margin-bottom: 12px;
-    }
+.category {
+  background: #f6f3ff;
+  border: 1px solid #e5ddff;
+  padding: 24px 12px;
+  border-radius: 12px;
+  text-align: center;
+  color: #21104a;
+  font-weight: bold;
+}
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 20px;
-    }
+.category span {
+  display: block;
+  font-size: 27px;
+  margin-bottom: 12px;
+}
 
-    .product {
-      background: #111a32;
-      border: 1px solid #25314e;
-      border-radius: 12px;
-      overflow: hidden;
-    }
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
 
-    .product-image {
-      height: 145px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #1d3159, #18203a);
-      font-size: 45px;
-    }
+.product {
+  background: #ffffff;
+  border: 1px solid #e9e4f5;
+  border-radius: 12px;
+  overflow: hidden;
+}
 
-    .product-info {
-      padding: 18px;
-    }
+.product-image {
+  height: 145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eee8ff, #e4edff);
+  font-size: 45px;
+}
 
-    .product-info small {
-      color: #d4af37;
-    }
+.product-info {
+  padding: 18px;
+}
 
-    .product-info h3 {
-      margin: 10px 0;
-      font-size: 17px;
-    }
+.product-info small {
+  color: #4930a8;
+}
 
-    .product-info p {
-      color: #aeb8ce;
-      font-size: 13px;
-      line-height: 1.5;
-    }
+.product-info h3 {
+  margin: 10px 0;
+  font-size: 17px;
+  color: #21104a;
+}
 
-    .price {
-      color: #d4af37;
-      font-weight: bold;
-      margin-top: 15px;
-    }
+.product-info p {
+  color: #77718a;
+  font-size: 13px;
+  line-height: 1.5;
+}
 
-    .empty {
-      display: none;
-      color: #b7bfd3;
-      margin-top: 20px;
-    }
+.price {
+  color: #2864d8;
+  font-weight: bold;
+  margin-top: 15px;
+}
 
-    .banner {
-      margin: 10px 7% 60px;
-      padding: 40px 25px;
-      background: #111a32;
-      border: 1px solid #d4af37;
-      border-radius: 14px;
-      text-align: center;
-    }
+.empty {
+  display: none;
+  color: #77718a;
+  margin-top: 20px;
+}
 
-    .banner h2 {
-      color: #d4af37;
-      margin-bottom: 12px;
-    }
+.banner {
+  margin: 10px 7% 60px;
+  padding: 40px 25px;
+  background: linear-gradient(135deg, #21104a, #4930a8);
+  border: 1px solid #4930a8;
+  border-radius: 14px;
+  text-align: center;
+  color: #ffffff;
+}
 
-    .banner p {
-      color: #b7bfd3;
-      line-height: 1.6;
-    }
+.banner h2 {
+  color: #ffffff;
+  margin-bottom: 12px;
+}
 
-    footer {
-      border-top: 1px solid #202943;
-      padding: 30px 7%;
-      text-align: center;
-      color: #8d98b1;
-      font-size: 13px;
-      line-height: 2;
-    }
+.banner p {
+  color: #eeeaff;
+  line-height: 1.6;
+}
 
-    @media (max-width: 600px) {
-      header {
-        padding: 18px 5%;
-      }
+footer {
+  border-top: 1px solid #eeeaf7;
+  padding: 30px 7%;
+  text-align: center;
+  color: #77718a;
+  font-size: 13px;
+  line-height: 2;
+  background: #ffffff;
+}
 
-      nav a {
-        margin-left: 10px;
-        font-size: 12px;
-      }
+footer .logo {
+  color: #21104a;
+}
 
-      .logo {
-        font-size: 20px;
-      }
+@media (max-width: 600px) {
+  header {
+    padding: 18px 5%;
+  }
 
-      .hero {
-        padding: 75px 18px 60px;
-      }
+  nav a {
+    margin-left: 10px;
+    font-size: 12px;
+  }
 
-      .section {
-        padding: 40px 5%;
-      }
-    }
+  .logo {
+    font-size: 20px;
+  }
+
+  .hero {
+    padding: 75px 18px 60px;
+  }
+
+  .section {
+    padding: 40px 5%;
+  }
+}
+
   </style>
 </head>
 
@@ -272,7 +287,6 @@
         <input
           type="search"
           id="searchInput"
-          placeholder="Rechercher un produit..."
         >
         <button onclick="searchProducts()">Rechercher</button>
       </div>
