@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mandela Digital</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #080d25;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 25px;
+      color: #d4af37;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 90px 20px;
+    }
+
+    h1 {
+      font-size: 38px;
+    }
+
+    p {
+      color: #c5c9d8;
+      line-height: 1.7;
+    }
+
+    button {
+      background: #d4af37;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>MANDELA DIGITAL</header>
+
+  <main>
+    <h1>Bienvenue dans notre univers.</h1>
+    <p>
+      Nous construisons des solutions numériques
+      pour donner vie aux idées.
+    </p>
+    <button>Découvrir nos projets</button>
+  </main>
+</body>
+</html>
