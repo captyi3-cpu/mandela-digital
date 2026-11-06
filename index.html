@@ -9,6 +9,8 @@
 
   <style>
 
+<style>
+
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +20,7 @@
 body {
   font-family: Arial, sans-serif;
   background: #ffffff;
-  color: #171321;
+  color: #17221d;
 }
 
 header {
@@ -26,33 +28,38 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 22px 7%;
-  border-bottom: 1px solid #eeeaf7;
+  border-bottom: 1px solid #e6ece8;
   background: #ffffff;
 }
 
 .logo {
   font-size: 25px;
   font-weight: 800;
-  color: #21104a;
+  color: #145a42;
   letter-spacing: 1px;
 }
 
 nav a {
-  color: #39334b;
+  color: #34483e;
   text-decoration: none;
   margin-left: 22px;
   font-size: 14px;
 }
 
+nav a:hover {
+  color: #d94b4b;
+}
+
 .hero {
   text-align: center;
   padding: 95px 20px 75px;
-  background: linear-gradient(135deg, #21104a, #4930a8, #2864d8);
+  background: linear-gradient(135deg, #0f4634, #145a42, #237456);
   color: #ffffff;
+  border-bottom: 5px solid #d94b4b;
 }
 
 .tag {
-  color: #e2dcff;
+  color: #c5e4d5;
   font-size: 12px;
   letter-spacing: 3px;
   margin-bottom: 22px;
@@ -70,7 +77,7 @@ h1 span {
 }
 
 .hero p {
-  color: #eeeaff;
+  color: #e0eee7;
   max-width: 600px;
   margin: 22px auto 30px;
   line-height: 1.7;
@@ -92,17 +99,22 @@ h1 span {
   outline: none;
   padding: 13px;
   font-size: 14px;
-  color: #171321;
+  color: #17221d;
 }
 
 .search button {
-  background: #4930a8;
+  background: #d94b4b;
   color: #ffffff;
   border: none;
   border-radius: 6px;
   padding: 12px 20px;
   font-weight: bold;
   cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search button:hover {
+  background: #bd3838;
 }
 
 .section {
@@ -113,11 +125,11 @@ h1 span {
 .section h2 {
   font-size: 25px;
   margin-bottom: 10px;
-  color: #21104a;
+  color: #145a42;
 }
 
 .subtitle {
-  color: #77718a;
+  color: #718078;
   margin-bottom: 28px;
   font-size: 14px;
 }
@@ -129,13 +141,19 @@ h1 span {
 }
 
 .category {
-  background: #f6f3ff;
-  border: 1px solid #e5ddff;
+  background: #f3f7f4;
+  border: 1px solid #dce9e1;
   padding: 24px 12px;
   border-radius: 12px;
   text-align: center;
-  color: #21104a;
+  color: #145a42;
   font-weight: bold;
+  transition: 0.2s;
+}
+
+.category:hover {
+  border-color: #d94b4b;
+  transform: translateY(-3px);
 }
 
 .category span {
@@ -152,9 +170,15 @@ h1 span {
 
 .product {
   background: #ffffff;
-  border: 1px solid #e9e4f5;
+  border: 1px solid #e1eae4;
   border-radius: 12px;
   overflow: hidden;
+  transition: 0.2s;
+}
+
+.product:hover {
+  border-color: #145a42;
+  transform: translateY(-3px);
 }
 
 .product-image {
@@ -162,7 +186,7 @@ h1 span {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #eee8ff, #e4edff);
+  background: linear-gradient(135deg, #e5f0e9, #f3f7f4);
   font-size: 45px;
 }
 
@@ -171,38 +195,39 @@ h1 span {
 }
 
 .product-info small {
-  color: #4930a8;
+  color: #d94b4b;
 }
 
 .product-info h3 {
   margin: 10px 0;
   font-size: 17px;
-  color: #21104a;
+  color: #145a42;
 }
 
 .product-info p {
-  color: #77718a;
+  color: #718078;
   font-size: 13px;
   line-height: 1.5;
 }
 
 .price {
-  color: #2864d8;
+  color: #145a42;
   font-weight: bold;
   margin-top: 15px;
 }
 
 .empty {
   display: none;
-  color: #77718a;
+  color: #718078;
   margin-top: 20px;
 }
 
 .banner {
   margin: 10px 7% 60px;
   padding: 40px 25px;
-  background: linear-gradient(135deg, #21104a, #4930a8);
-  border: 1px solid #4930a8;
+  background: linear-gradient(135deg, #0f4634, #145a42);
+  border: 1px solid #237456;
+  border-left: 5px solid #d94b4b;
   border-radius: 14px;
   text-align: center;
   color: #ffffff;
@@ -214,22 +239,22 @@ h1 span {
 }
 
 .banner p {
-  color: #eeeaff;
+  color: #e0eee7;
   line-height: 1.6;
 }
 
 footer {
-  border-top: 1px solid #eeeaf7;
+  border-top: 1px solid #e6ece8;
   padding: 30px 7%;
   text-align: center;
-  color: #77718a;
+  color: #718078;
   font-size: 13px;
   line-height: 2;
   background: #ffffff;
 }
 
 footer .logo {
-  color: #21104a;
+  color: #145a42;
 }
 
 @media (max-width: 600px) {
@@ -253,7 +278,17 @@ footer .logo {
   .section {
     padding: 40px 5%;
   }
+
+  .banner {
+    margin: 10px 5% 40px;
+  }
+
+  .search button {
+    padding: 12px 14px;
+  }
 }
+
+</style>
 
   </style>
 </head>
