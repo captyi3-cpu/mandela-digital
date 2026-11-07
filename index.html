@@ -234,7 +234,8 @@
       cursor: pointer;
     }
 
-    .category:hover {
+    .category:hover,
+    .category.active {
       border-color: var(--pink);
       transform: translateY(-4px);
       box-shadow: 0 12px 30px rgba(233,75,135,.08);
@@ -276,6 +277,24 @@
     }
 
     /* PRODUCTS */
+
+    .all-products-button {
+      background: var(--pink);
+      color: var(--white);
+      border: 1px solid var(--pink);
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+      margin-bottom: 20px;
+      transition: .2s;
+    }
+
+    .all-products-button:hover,
+    .all-products-button.active {
+      background: var(--black);
+      border-color: var(--black);
+    }
 
     .products {
       display: grid;
@@ -555,7 +574,7 @@
           placeholder="Que recherchez-vous ?"
           aria-label="Rechercher un produit"
         >
-        <button onclick="searchProducts()">Rechercher</button>
+        <button type="button" onclick="filterProducts()">Rechercher</button>
       </div>
 
       <div class="hero-note">
@@ -575,7 +594,7 @@
 
       <div class="categories">
 
-        <a href="#produits" class="category">
+        <a href="#produits" class="category" data-category="ebook">
           <div class="category-number">01 — SAVOIR</div>
           <div>
             <h3>E-books</h3>
@@ -584,7 +603,7 @@
           <span class="category-arrow">↗</span>
         </a>
 
-        <a href="#produits" class="category">
+        <a href="#produits" class="category" data-category="logiciel">
           <div class="category-number">02 — OUTILS</div>
           <div>
             <h3>Logiciels</h3>
@@ -593,7 +612,7 @@
           <span class="category-arrow">↗</span>
         </a>
 
-        <a href="#produits" class="category">
+        <a href="#produits" class="category" data-category="application">
           <div class="category-number">03 — MOBILE</div>
           <div>
             <h3>Applications</h3>
@@ -602,7 +621,7 @@
           <span class="category-arrow">↗</span>
         </a>
 
-        <a href="#produits" class="category">
+        <a href="#produits" class="category" data-category="formation">
           <div class="category-number">04 — APPRENTISSAGE</div>
           <div>
             <h3>Formations</h3>
@@ -611,7 +630,7 @@
           <span class="category-arrow">↗</span>
         </a>
 
-        <a href="#produits" class="category">
+        <a href="#produits" class="category" data-category="abonnement">
           <div class="category-number">05 — ACCÈS</div>
           <div>
             <h3>Abonnements</h3>
@@ -633,9 +652,13 @@
         </div>
       </div>
 
+      <button type="button" id="showAllProducts" class="all-products-button active">
+        Tous les produits
+      </button>
+
       <div class="products" id="productList">
 
-        <article class="product">
+        <article class="product" data-category="ebook">
           <div class="product-image">📘</div>
           <div class="product-info">
             <small>E-BOOK</small>
@@ -645,7 +668,7 @@
           </div>
         </article>
 
-        <article class="product">
+        <article class="product" data-category="logiciel">
           <div class="product-image">⌘</div>
           <div class="product-info">
             <small>LOGICIEL</small>
@@ -655,7 +678,7 @@
           </div>
         </article>
 
-        <article class="product">
+        <article class="product" data-category="formation">
           <div class="product-image">◎</div>
           <div class="product-info">
             <small>FORMATION</small>
@@ -665,7 +688,7 @@
           </div>
         </article>
 
-        <article class="product">
+        <article class="product" data-category="application">
           <div class="product-image">✳</div>
           <div class="product-info">
             <small>RESSOURCES</small>
@@ -678,7 +701,7 @@
       </div>
 
       <p class="empty" id="emptyMessage">
-        Aucun produit trouvé pour cette recherche.
+        Aucun produit trouvé pour cette recherche ou cette catégorie.
       </p>
 
     </section>
@@ -708,29 +731,66 @@
   </footer>
 
   <script>
-    function searchProducts() {
-      const input = document.getElementById("searchInput");
-      const query = input.value.trim().toLowerCase();
+    const products = document.querySelectorAll(".product");
+    const categories = document.querySelectorAll(".category");
+    const searchInput = document.getElementById("searchInput");
+    const emptyMessage = document.getElementById("emptyMessage");
+    const showAllButton = document.getElementById("showAllProducts");
 
-      const products = document.querySelectorAll(".product");
+    let selectedCategory = "all";
+
+    function filterProducts() {
+      const query = searchInput.value.trim().toLowerCase();
       let visible = 0;
 
       products.forEach(product => {
-        const match = product.textContent
-          .toLowerCase()
-          .includes(query);
+        const categoryMatch =
+          selectedCategory === "all" ||
+          product.dataset.category === selectedCategory;
 
-        product.style.display = match ? "" : "none";
+        const searchMatch =
+          product.textContent.toLowerCase().includes(query);
 
-        if (match) visible++;
+        const show = categoryMatch && searchMatch;
+
+        product.style.display = show ? "" : "none";
+
+        if (show) visible++;
       });
 
-      document.getElementById("emptyMessage").style.display =
+      emptyMessage.style.display =
         visible === 0 ? "block" : "none";
     }
 
-    document.getElementById("searchInput")
-      .addEventListener("input", searchProducts);
+    function updateActiveCategory() {
+      categories.forEach(category => {
+        category.classList.toggle(
+          "active",
+          category.dataset.category === selectedCategory
+        );
+      });
+
+      showAllButton.classList.toggle(
+        "active",
+        selectedCategory === "all"
+      );
+    }
+
+    categories.forEach(category => {
+      category.addEventListener("click", () => {
+        selectedCategory = category.dataset.category;
+        updateActiveCategory();
+        filterProducts();
+      });
+    });
+
+    showAllButton.addEventListener("click", () => {
+      selectedCategory = "all";
+      updateActiveCategory();
+      filterProducts();
+    });
+
+    searchInput.addEventListener("input", filterProducts);
   </script>
 
 </body>
