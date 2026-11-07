@@ -4,308 +4,538 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="VENTRA√10, votre marketplace internationale de produits numériques.">
-  <title>VENTRA√10 — Digital Marketplace</title>
+  <meta name="description" content="EASYRIQUE, votre marketplace internationale de produits numériques.">
+  <meta name="theme-color" content="#ffffff">
+  <title>EASYRIQUE — Digital Marketplace</title>
 
   <style>
+    :root {
+      --white: #ffffff;
+      --pink: #E94B87;
+      --black: #111111;
+      --gray: #777777;
+      --light: #f7f7f8;
+      --border: #eeeeef;
+    }
 
-<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #ffffff;
-  color: #17221d;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--black);
+    }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 7%;
-  border-bottom: 1px solid #e6ece8;
-  background: #ffffff;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.logo {
-  font-size: 25px;
-  font-weight: 800;
-  color: #145a42;
-  letter-spacing: 1px;
-}
+    button, input {
+      font: inherit;
+    }
 
-nav a {
-  color: #34483e;
-  text-decoration: none;
-  margin-left: 22px;
-  font-size: 14px;
-}
+    .container {
+      width: 88%;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-nav a:hover {
-  color: #d94b4b;
-}
+    /* NAVIGATION */
 
-.hero {
-  text-align: center;
-  padding: 95px 20px 75px;
-  background: linear-gradient(135deg, #0f4634, #145a42, #237456);
-  color: #ffffff;
-  border-bottom: 5px solid #d94b4b;
-}
+    header {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      padding: 0 6%;
+    }
 
-.tag {
-  color: #c5e4d5;
-  font-size: 12px;
-  letter-spacing: 3px;
-  margin-bottom: 22px;
-}
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+    }
 
-h1 {
-  font-size: clamp(34px, 6vw, 58px);
-  max-width: 850px;
-  margin: auto;
-  line-height: 1.15;
-}
+    .logo span {
+      color: var(--pink);
+    }
 
-h1 span {
-  color: #ffffff;
-}
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
 
-.hero p {
-  color: #e0eee7;
-  max-width: 600px;
-  margin: 22px auto 30px;
-  line-height: 1.7;
-}
+    nav a {
+      font-size: 13px;
+      font-weight: 600;
+      color: #444;
+      transition: .2s;
+    }
 
-.search {
-  display: flex;
-  max-width: 570px;
-  margin: auto;
-  background: #ffffff;
-  border-radius: 9px;
-  padding: 6px;
-}
+    nav a:hover {
+      color: var(--pink);
+    }
 
-.search input {
-  flex: 1;
-  min-width: 0;
-  border: none;
-  outline: none;
-  padding: 13px;
-  font-size: 14px;
-  color: #17221d;
-}
+    .nav-button {
+      background: var(--black);
+      color: var(--white);
+      padding: 12px 19px;
+      border-radius: 6px;
+    }
 
-.search button {
-  background: #d94b4b;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  padding: 12px 20px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s;
-}
+    .nav-button:hover {
+      background: var(--pink);
+      color: var(--white);
+    }
 
-.search button:hover {
-  background: #bd3838;
-}
+    /* HERO */
 
-.section {
-  padding: 55px 7%;
-  background: #ffffff;
-}
+    .hero {
+      text-align: center;
+      padding: 105px 20px 95px;
+      background: var(--white);
+    }
 
-.section h2 {
-  font-size: 25px;
-  margin-bottom: 10px;
-  color: #145a42;
-}
+    .eyebrow {
+      display: inline-block;
+      color: var(--pink);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 25px;
+    }
 
-.subtitle {
-  color: #718078;
-  margin-bottom: 28px;
-  font-size: 14px;
-}
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      letter-spacing: -3px;
+      line-height: 1.08;
+      max-width: 850px;
+      margin: auto;
+    }
 
-.categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-  gap: 15px;
-}
+    .hero h1 span {
+      color: var(--pink);
+    }
 
-.category {
-  background: #f3f7f4;
-  border: 1px solid #dce9e1;
-  padding: 24px 12px;
-  border-radius: 12px;
-  text-align: center;
-  color: #145a42;
-  font-weight: bold;
-  transition: 0.2s;
-}
+    .hero p {
+      max-width: 590px;
+      margin: 23px auto 32px;
+      color: var(--gray);
+      line-height: 1.8;
+      font-size: 15px;
+    }
 
-.category:hover {
-  border-color: #d94b4b;
-  transform: translateY(-3px);
-}
+    .search {
+      display: flex;
+      max-width: 590px;
+      margin: auto;
+      padding: 6px;
+      border: 1px solid #e7e7e7;
+      border-radius: 9px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.04);
+    }
 
-.category span {
-  display: block;
-  font-size: 27px;
-  margin-bottom: 12px;
-}
+    .search input {
+      flex: 1;
+      min-width: 0;
+      border: none;
+      outline: none;
+      padding: 14px;
+      font-size: 14px;
+      background: transparent;
+    }
 
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 20px;
-}
+    .search button {
+      background: var(--pink);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      padding: 13px 22px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: .2s;
+    }
 
-.product {
-  background: #ffffff;
-  border: 1px solid #e1eae4;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: 0.2s;
-}
+    .search button:hover {
+      background: var(--black);
+    }
 
-.product:hover {
-  border-color: #145a42;
-  transform: translateY(-3px);
-}
+    .hero-note {
+      margin-top: 18px;
+      font-size: 11px;
+      color: #999;
+    }
 
-.product-image {
-  height: 145px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #e5f0e9, #f3f7f4);
-  font-size: 45px;
-}
+    /* GENERAL SECTIONS */
 
-.product-info {
-  padding: 18px;
-}
+    .section {
+      padding: 75px 0;
+    }
 
-.product-info small {
-  color: #d94b4b;
-}
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 32px;
+      gap: 20px;
+    }
 
-.product-info h3 {
-  margin: 10px 0;
-  font-size: 17px;
-  color: #145a42;
-}
+    .section-heading h2 {
+      font-size: clamp(25px, 4vw, 35px);
+      letter-spacing: -1.2px;
+    }
 
-.product-info p {
-  color: #718078;
-  font-size: 13px;
-  line-height: 1.5;
-}
+    .section-heading p {
+      color: var(--gray);
+      font-size: 13px;
+      margin-top: 9px;
+      line-height: 1.6;
+    }
 
-.price {
-  color: #145a42;
-  font-weight: bold;
-  margin-top: 15px;
-}
+    .section-number {
+      color: var(--pink);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
 
-.empty {
-  display: none;
-  color: #718078;
-  margin-top: 20px;
-}
+    /* CATEGORIES */
 
-.banner {
-  margin: 10px 7% 60px;
-  padding: 40px 25px;
-  background: linear-gradient(135deg, #0f4634, #145a42);
-  border: 1px solid #237456;
-  border-left: 5px solid #d94b4b;
-  border-radius: 14px;
-  text-align: center;
-  color: #ffffff;
-}
+    .categories {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      grid-template-rows: 175px 175px;
+      gap: 15px;
+    }
 
-.banner h2 {
-  color: #ffffff;
-  margin-bottom: 12px;
-}
+    .category {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 23px;
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: .25s ease;
+      cursor: pointer;
+    }
 
-.banner p {
-  color: #e0eee7;
-  line-height: 1.6;
-}
+    .category:hover {
+      border-color: var(--pink);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(233,75,135,.08);
+    }
 
-footer {
-  border-top: 1px solid #e6ece8;
-  padding: 30px 7%;
-  text-align: center;
-  color: #718078;
-  font-size: 13px;
-  line-height: 2;
-  background: #ffffff;
-}
+    .category:first-child {
+      grid-row: span 2;
+      background: #fff7fa;
+    }
 
-footer .logo {
-  color: #145a42;
-}
+    .category-number {
+      font-size: 12px;
+      color: var(--pink);
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
 
-@media (max-width: 600px) {
-  header {
-    padding: 18px 5%;
-  }
+    .category h3 {
+      font-size: 21px;
+      letter-spacing: -.5px;
+    }
 
-  nav a {
-    margin-left: 10px;
-    font-size: 12px;
-  }
+    .category:first-child h3 {
+      font-size: 29px;
+    }
 
-  .logo {
-    font-size: 20px;
-  }
+    .category p {
+      color: var(--gray);
+      font-size: 12px;
+      margin-top: 7px;
+    }
 
-  .hero {
-    padding: 75px 18px 60px;
-  }
+    .category-arrow {
+      position: absolute;
+      right: 22px;
+      bottom: 21px;
+      font-size: 20px;
+      color: var(--pink);
+    }
 
-  .section {
-    padding: 40px 5%;
-  }
+    /* PRODUCTS */
 
-  .banner {
-    margin: 10px 5% 40px;
-  }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
 
-  .search button {
-    padding: 12px 14px;
-  }
-}
+    .product {
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      overflow: hidden;
+      background: var(--white);
+      transition: .25s;
+    }
 
-</style>
+    .product:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.05);
+    }
 
+    .product-image {
+      height: 155px;
+      background: var(--light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 42px;
+    }
+
+    .product-info {
+      padding: 17px;
+    }
+
+    .product-info small {
+      color: var(--pink);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .product-info h3 {
+      font-size: 15px;
+      margin: 10px 0;
+    }
+
+    .product-info p {
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--gray);
+    }
+
+    .price {
+      margin-top: 15px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .empty {
+      display: none;
+      color: var(--gray);
+      margin-top: 25px;
+      font-size: 14px;
+    }
+
+    /* SELLER BANNER */
+
+    .seller {
+      margin: 20px 0 80px;
+      background: var(--black);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 55px 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .seller h2 {
+      font-size: clamp(24px, 4vw, 35px);
+      margin-bottom: 13px;
+    }
+
+    .seller p {
+      color: #cccccc;
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 520px;
+    }
+
+    .seller a {
+      display: inline-block;
+      background: var(--pink);
+      color: var(--white);
+      padding: 15px 23px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .seller a:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 35px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: var(--gray);
+      font-size: 12px;
+    }
+
+    footer .logo {
+      color: var(--black);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 190px 150px 150px;
+      }
+
+      .category:first-child {
+        grid-column: span 2;
+        grid-row: auto;
+      }
+
+      .seller {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        height: 68px;
+        padding: 0 5%;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      nav {
+        gap: 13px;
+      }
+
+      nav a {
+        font-size: 11px;
+      }
+
+      .nav-button {
+        padding: 10px;
+      }
+
+      .hero {
+        padding: 80px 18px 70px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 13px;
+      }
+
+      .search button {
+        padding: 12px;
+        font-size: 12px;
+      }
+
+      .container {
+        width: 90%;
+      }
+
+      .section {
+        padding: 55px 0;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+      }
+
+      .categories {
+        gap: 10px;
+        grid-template-rows: 170px 145px 145px;
+      }
+
+      .category {
+        padding: 16px;
+      }
+
+      .category h3 {
+        font-size: 16px;
+      }
+
+      .category:first-child h3 {
+        font-size: 24px;
+      }
+
+      .products {
+        gap: 10px;
+      }
+
+      .product-image {
+        height: 115px;
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .product-info h3 {
+        font-size: 13px;
+      }
+
+      .seller {
+        padding: 35px 23px;
+        margin-bottom: 50px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <header>
-    <div class="logo">VENTRA√10</div>
+    <a href="#" class="logo">EASY<span>RIQUE</span></a>
+
     <nav>
       <a href="#categories">Explorer</a>
       <a href="#produits">Produits</a>
+      <a href="#vendeurs" class="nav-button">Vendre</a>
     </nav>
   </header>
 
   <main>
+
     <section class="hero">
-      <div class="tag">THE WORLD DIGITAL MARKETPLACE</div>
+      <div class="eyebrow">THE WORLD DIGITAL MARKETPLACE</div>
 
       <h1>
         Le monde numérique<br>
@@ -322,72 +552,126 @@ footer .logo {
         <input
           type="search"
           id="searchInput"
+          placeholder="Que recherchez-vous ?"
+          aria-label="Rechercher un produit"
         >
         <button onclick="searchProducts()">Rechercher</button>
       </div>
-    </section>
 
-    <section class="section" id="categories">
-      <h2>Explorez nos catégories</h2>
-      <p class="subtitle">
-        Trouvez les ressources numériques qui vous correspondent.
-      </p>
-
-      <div class="categories">
-        <div class="category"><span>📚</span>Ebooks</div>
-        <div class="category"><span>💻</span>Logiciels</div>
-        <div class="category"><span>📱</span>Applications</div>
-        <div class="category"><span>🎓</span>Formations</div>
-        <div class="category"><span>🔑</span>Abonnements</div>
-        <div class="category"><span>🎨</span>Ressources créatives</div>
+      <div class="hero-note">
+        Explorez. Découvrez. Développez vos possibilités.
       </div>
     </section>
 
-    <section class="section" id="produits">
-      <h2>À découvrir</h2>
-      <p class="subtitle">
-        Voici un aperçu des produits que vous pourrez retrouver sur VENTRA√10.
-      </p>
+    <section class="section container" id="categories">
+
+      <div class="section-heading">
+        <div>
+          <div class="section-number">01 / EXPLORATION</div>
+          <h2>Explorez nos catégories</h2>
+          <p>Tout un univers numérique à découvrir.</p>
+        </div>
+      </div>
+
+      <div class="categories">
+
+        <a href="#produits" class="category">
+          <div class="category-number">01 — SAVOIR</div>
+          <div>
+            <h3>E-books</h3>
+            <p>Des connaissances à portée de main.</p>
+          </div>
+          <span class="category-arrow">↗</span>
+        </a>
+
+        <a href="#produits" class="category">
+          <div class="category-number">02 — OUTILS</div>
+          <div>
+            <h3>Logiciels</h3>
+            <p>Des solutions pour avancer.</p>
+          </div>
+          <span class="category-arrow">↗</span>
+        </a>
+
+        <a href="#produits" class="category">
+          <div class="category-number">03 — MOBILE</div>
+          <div>
+            <h3>Applications</h3>
+            <p>Le numérique dans votre poche.</p>
+          </div>
+          <span class="category-arrow">↗</span>
+        </a>
+
+        <a href="#produits" class="category">
+          <div class="category-number">04 — APPRENTISSAGE</div>
+          <div>
+            <h3>Formations</h3>
+            <p>Développez vos compétences.</p>
+          </div>
+          <span class="category-arrow">↗</span>
+        </a>
+
+        <a href="#produits" class="category">
+          <div class="category-number">05 — ACCÈS</div>
+          <div>
+            <h3>Abonnements</h3>
+            <p>Des services et contenus exclusifs.</p>
+          </div>
+          <span class="category-arrow">↗</span>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="section container" id="produits">
+
+      <div class="section-heading">
+        <div>
+          <div class="section-number">02 / SÉLECTION</div>
+          <h2>À découvrir</h2>
+          <p>Un aperçu des produits de notre marketplace.</p>
+        </div>
+      </div>
 
       <div class="products" id="productList">
 
         <article class="product">
           <div class="product-image">📘</div>
           <div class="product-info">
-            <small>EBOOK</small>
+            <small>E-BOOK</small>
             <h3>Guide du succès numérique</h3>
-            <p>Un exemple de guide numérique pour apprendre et progresser.</p>
-            <div class="price">Produit de démonstration</div>
+            <p>Un guide pour apprendre et progresser.</p>
+            <div class="price">Exemple de produit</div>
           </div>
         </article>
 
         <article class="product">
-          <div class="product-image">💻</div>
+          <div class="product-image">⌘</div>
           <div class="product-info">
             <small>LOGICIEL</small>
             <h3>Outils de productivité</h3>
-            <p>Des solutions numériques pour mieux organiser son travail.</p>
-            <div class="price">Produit de démonstration</div>
+            <p>Des solutions pour organiser son travail.</p>
+            <div class="price">Exemple de produit</div>
           </div>
         </article>
 
         <article class="product">
-          <div class="product-image">🎓</div>
+          <div class="product-image">◎</div>
           <div class="product-info">
             <small>FORMATION</small>
-            <h3>Apprendre de nouvelles compétences</h3>
-            <p>Un exemple de formation accessible en ligne.</p>
-            <div class="price">Produit de démonstration</div>
+            <h3>Développer ses compétences</h3>
+            <p>Un exemple de formation en ligne.</p>
+            <div class="price">Exemple de produit</div>
           </div>
         </article>
 
         <article class="product">
-          <div class="product-image">🎨</div>
+          <div class="product-image">✳</div>
           <div class="product-info">
             <small>RESSOURCES</small>
             <h3>Pack créatif numérique</h3>
-            <p>Des ressources pour donner vie à vos idées.</p>
-            <div class="price">Produit de démonstration</div>
+            <p>Des ressources pour vos projets.</p>
+            <div class="price">Exemple de produit</div>
           </div>
         </article>
 
@@ -396,37 +680,47 @@ footer .logo {
       <p class="empty" id="emptyMessage">
         Aucun produit trouvé pour cette recherche.
       </p>
+
     </section>
 
-    <section class="banner">
-      <h2>Vous avez quelque chose à vendre ?</h2>
-      <p>
-        Rejoignez VENTRA√10 et préparez votre boutique
-        pour proposer vos produits numériques au monde entier.
-      </p>
+    <section class="seller container" id="vendeurs">
+      <div>
+        <h2>Vous avez quelque chose à vendre ?</h2>
+        <p>
+          Rejoignez EASYRIQUE et préparez votre boutique
+          pour proposer vos produits numériques au monde entier.
+        </p>
+      </div>
+
+      <a href="#vendeurs">Devenir vendeur ↗</a>
     </section>
+
   </main>
 
   <footer>
-    <div class="logo">VENTRA√10</div>
-    Le marché numérique sans frontières.
-    <br>
-    © 2026 VENTRA√10. Tous droits réservés.
+    <a href="#" class="logo">EASY<span>RIQUE</span></a>
+
+    <div>
+      Le marché numérique sans frontières.
+      <br>
+      © 2026 EASYRIQUE. Tous droits réservés.
+    </div>
   </footer>
 
   <script>
     function searchProducts() {
-      const query = document.getElementById("searchInput")
-        .value.toLowerCase();
+      const input = document.getElementById("searchInput");
+      const query = input.value.trim().toLowerCase();
 
       const products = document.querySelectorAll(".product");
       let visible = 0;
 
       products.forEach(product => {
-        const match = product.textContent.toLowerCase()
+        const match = product.textContent
+          .toLowerCase()
           .includes(query);
 
-        product.style.display = match ? "block" : "none";
+        product.style.display = match ? "" : "none";
 
         if (match) visible++;
       });
